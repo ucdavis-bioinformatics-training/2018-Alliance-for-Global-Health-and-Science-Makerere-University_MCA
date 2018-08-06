@@ -32,7 +32,7 @@ and two other directors
 
 **2\.** Now lets add the new bin directory to our PATH in a \.bash_profile file
 
-using your favorite text editor (e.g. using the 'nano' editor, type 'nano ~.bash_profile' to open nano and immediately edit .bash_profile in your home directory) add the line
+using your favorite text editor (e.g. using the 'nano' editor, type 'nano ~/.bash_profile' to open nano and immediately edit .bash_profile in your home directory) add the line
 
 	export PATH=~/mca_example/bin:$PATH
 
