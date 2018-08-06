@@ -59,7 +59,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file], whi
 
 	cd ~/mca_example/src
 	wget http://mirrors.ibiblio.org/apache/ant/binaries/apache-ant-1.10.3-bin.tar.gz
-	tar xzvf apache-ant-1.10.3-bin.tar.gz
+	tar xzvf apache-ant-1.10.5-bin.tar.gz
 	ln -s ~/mca_example/src/apache-ant-1.10.3/bin/ant ~/mca_example/bin/.
 	cd ..
 
