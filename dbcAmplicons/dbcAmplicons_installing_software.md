@@ -96,8 +96,8 @@ to ~/\.bash_profile, then source it
 
 If virtualenv is not available, First
 
-  easy_install pip
-  pip install virtualenv
+	easy_install pip
+	pip install virtualenv
 
 then,
 
