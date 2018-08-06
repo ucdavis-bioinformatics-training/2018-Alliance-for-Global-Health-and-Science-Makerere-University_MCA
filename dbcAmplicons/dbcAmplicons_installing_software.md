@@ -66,7 +66,6 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file], whi
 **4\.b** Install the **Ribsomal Database Project** (RDP) into src
 
 	cd ~/mca_example/src
-	module load java/jdk1.8
 	git clone https://github.com/rdpstaff/RDPTools.git
 	cd RDPTools/
 	git submodule init
@@ -85,7 +84,6 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file], whi
 
 using your favorite text editor, (nano?), add the line
 
-	module load java/jdk1.8
 	export RDP_PATH=~/mca_example/src/RDPTools
 
 to ~/\.bash_profile, then source it
@@ -97,14 +95,12 @@ to ~/\.bash_profile, then source it
 **5\.a** Setup a python virtual environment for dbcAmplicons, in the src directory
 
 	cd ~/mca_example/src
-	module load python-libs/2.7.6-ubuntu
 	virtualenv dbcA_virtualenv
 
 **5\.b** This lets you set the virtual environment to activate on login by adding it to our \.bash_profile
 
 using your favorite text editor, _nano_ is simple, add the lines
 
-	module load python-libs/2.7.6-ubuntu
 	source ~/mca_example/src/dbcA_virtualenv/bin/activate
 
 to a file named ~/\.bash_profile, then source it
@@ -168,9 +164,7 @@ If for some reason installation failed you can extract a copy from the workshop 
 You still need to set up the same environment variable in your \.bash_profile. These lines should be in your .bash_profile
 
   export PATH=~/mca_example/bin:$PATH  
-  module load java/jdk1.8  
   export RDP_PATH=~/mca_example/src/RDPTools  
-  module load python-libs/2.7.6-ubuntu  
   source ~/mca_example/src/dbcA_virtualenv/bin/activate  
 
 ---
