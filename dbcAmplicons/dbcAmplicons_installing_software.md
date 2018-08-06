@@ -94,8 +94,16 @@ to ~/\.bash_profile, then source it
 
 **5\.a** Setup a python virtual environment for dbcAmplicons, in the src directory
 
+If virtualenv is not available, First
+
+  easy_install pip
+  pip install virtualenv
+
+then,
+
 	cd ~/mca_example/src
 	virtualenv dbcA_virtualenv
+
 
 **5\.b** This lets you set the virtual environment to activate on login by adding it to our \.bash_profile
 
