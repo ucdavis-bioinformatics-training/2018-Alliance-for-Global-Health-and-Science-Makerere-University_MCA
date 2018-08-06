@@ -1,10 +1,6 @@
 Running the dbcAmplicons pipeline
 ===============================================
 
-**ALL of this should only be done in an interactive session on the cluster**
-
-srun -t 1-0 -c 2 -n 1 --mem 10000 --reservation workshop --pty /bin/bash
-
 **1\.** First lets validate our install and environment
 
 Change directory into the workshops space
@@ -113,7 +109,3 @@ Run all reads
 
 	splitReadsBySample.py -h
 	splitReadsBySample.py -O SplitBySample/16sV1V3 -1 Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3_R1.fastq.gz -2 Slashpile.intermediate/16sV1V3/Slashpile-16sV1V3_R2.fastq.gz
-
-**FYI** Preprocessing Pairs with inline BC, Mills lab protocol
-
-	preproc_Pair_with_inlineBC.py -h

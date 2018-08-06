@@ -1,7 +1,7 @@
 ## August 6-10, 2018
 
 ### Intro Material
-* [Intro to command line](intro2CLI/intro2CLI.pdf) (short talk)
+* [Intro to command line](intro2CLI/Intro2CLI.pdf) (short talk)
 * [Intro to command line](intro2CLI/command-line-intro.md) (materials)
 * [Intro to R]()
 
@@ -9,10 +9,8 @@
 [Cheat Sheets](cheatSheetIndex.md)
 
 ### Lectures
-* [Intro to Microbial Sequencing](Intro2MCSequencing.pdf) (talk)
-* [What is Bioinformatics?](What_is_Bioinformatics.pdf) (talk)
-* [dbcAmplicons: Amplicons](dbcAmplicons_Amplicons.pdf) (materials)
-* [dbcAmplicons: Bioinformatics](dbcAmplicons_Bioinformatics.pdf) (materials)
+* [What is Bioinformatics?](talks/What_is_Bioinformatics.pdf) (talk)
+* [Intro to Microbial Sequencing/Experimental Design](talks/Experimental_Design.pdf) (talk)
 
 ### dataset metadata
 * [sample submission](metadata/slashpilesamplesheet.xlsx)
@@ -27,14 +25,8 @@
 * [dbcAmplicons: Data processing, 16S V1-V3](dbcAmplicons/dbcAmplicons_commands.md) (materials)
 * [dbcAmplicons: Data processing, other amplicons](dbcAmplicons/dbcAmplicons_commands_all_amplicons.md) (materials)
 
-
-* [MCA Analysis in phyloseq](MCA_Workshop_R/phyloseq.md)
+### Microbial Community Analysis in R
+* [MCA Analysis in phyloseq]()
 
 ### Resources
 * [Primer Design](metadata/Illumina-workshop-Primers-worksheet.xls)
-
-### Metagenomics Discussion
-* [Metagenomics](metagenomics.pdf)
-* [Preprocessing Data](Preprocessing.pdf)
-
-[Closing thoughts](Closing_Thoughts.pdf)

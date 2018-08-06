@@ -1,7 +1,5 @@
 # Installing the workshop software
 
-**ALL of this can be done on the head node, ganesh**
-
 We are going to install the software needed for this workshop
 
 1. FLASH2 to overlap reads (https://github.com/dstreett/FLASH2)
@@ -44,7 +42,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file], whi
 
 ---
 
-**3\.** Install **FLASH2** into src and link the exectuable into bin
+**3\.** Install **FLASH2** into src and link the executable into bin
 
 	cd ~/mca_example/src
 	git clone https://github.com/dstreett/FLASH2.git
@@ -75,7 +73,7 @@ to a file named \.bash_profile [node the leading \. as its a 'hidden' file], whi
 	git submodule update
 	make
 	# might have problems retreiving data.tgz file ... if so, try again ...
-	# during 9-5 EST(!) ... 
+	# during 9-5 EST(!) ...
 	# test installation, should see help documentation for classify
 	java -jar classifier.jar classify
 	# this should give you a "Command Error" because you didn\'t specify output

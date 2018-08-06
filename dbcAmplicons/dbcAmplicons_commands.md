@@ -1,13 +1,7 @@
 Running the dbcAmplicons pipeline
 ===============================================
 
-**ALL of this should only be done in an interactive session on the cluster**
-
-First login to ganesh, then
-
-	srun -t 1-0 -c 2 -n 1 --mem 10000 --reservation workshop --pty /bin/bash
-
-The goal of today is to process raw Illumina sequence reads to abundance tables for the 16sV1-V3 amplicon set. To do so we first need to  1) have all the software installed and working, and 2) have the Illumina sequence data within our project folder (mca_example). We then need to prepare the input metadata files: barcodes, primers, and samples. Amplicon processing with dbcAmplicons includes the following steps: preprocessing, join, classify and abundances.
+The goal is to process raw Illumina sequence reads to abundance tables for the 16sV1-V3 amplicon set. To do so we first need to  1) have all the software installed and working, and 2) have the Illumina sequence data within our project folder (mca_example). We then need to prepare the input metadata files: barcodes, primers, and samples. Amplicon processing with dbcAmplicons includes the following steps: preprocessing, join, classify and abundances.
 
 ![workflow](Workflow.png)
 
@@ -157,7 +151,7 @@ View the output folder, what do you see?
 
 ---
 
-**7\.** Write out the softare versions to a file in the folder for records keeping.
+**7\.** Write out the software versions to a file in the folder for records keeping.
 
 	dbcVersionReport.sh &> VersionInfo.txt
 
@@ -170,8 +164,6 @@ Transfer the abundances, proportions, tax_info, and biom file to your computer f
 Post joining evaluate the results. --Hint: one of these should be processed differently than the others--
 
 Once join is complete for all amplicons, setup and run the remainder of the pipeline for each amplicon.
-
-**Advanced** Set up a slurm script to sbatch the job on the cluster.
 
 ---
 
