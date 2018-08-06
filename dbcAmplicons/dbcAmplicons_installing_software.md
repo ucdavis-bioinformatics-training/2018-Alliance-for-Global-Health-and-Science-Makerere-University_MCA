@@ -1,6 +1,6 @@
 # Installing the workshop software
 
-**ALL of this can be done on the head node**
+**ALL of this can be done on the head node, ganesh**
 
 We are going to install the software needed for this workshop
 
@@ -24,30 +24,29 @@ optional
 
 **1\.** First, create a directory for the workshop in your home directory:
 
-    cd 
+    cd
     mkdir mca_example
 
-and two other directors 
+and two other directors
 
 	mkdir mca_example/src
 	mkdir mca_example/bin
 
-**2\.** Now lets add the new bin directory to our PATH in a mca_profile file
+**2\.** Now lets add the new bin directory to our PATH in a \.bash_profile file
 
-using your favorite text editor, _nano_ is simple, add the line
+using your favorite text editor (e.g. using the 'nano' editor, type 'nano ~.bash_profile' to open nano and immediately edit .bash_profile in your home directory) add the line
 
 	export PATH=~/mca_example/bin:$PATH
-	module load bowtie2/2.2.8
 
-to a file named mca_profile in your home directory. Then on the command line, so that we don't have to first log out then log back in.
+to a file named \.bash_profile [node the leading \. as its a 'hidden' file], which may or may not already exist in your home. Then save and exit (e.g. using 'nano', type <control-O> to save, then <control-X> to exit). Then on the command line, execute the commands in your .bash_profile file (which normally only get executed when you log in).
 
-	source mca_profile
+	source ~/.bash_profile
 
 ---
 
 **3\.** Install **FLASH2** into src and link the exectuable into bin
 
-	cd mca_example/src
+	cd ~/mca_example/src
 	git clone https://github.com/dstreett/FLASH2.git
 	cd FLASH2/
 	make
@@ -56,70 +55,86 @@ to a file named mca_profile in your home directory. Then on the command line, so
 	flash2 -h
 	cd ..
 
----	
+---
 
-**4\.a** Need Apache Ant and Java JDK 1.8 or higher to install
+**4\.a** Install apache ant, need for RDP
+
+	cd ~/mca_example/src
+	wget http://mirrors.ibiblio.org/apache/ant/binaries/apache-ant-1.10.3-bin.tar.gz
+	tar xzvf apache-ant-1.10.3-bin.tar.gz
+	ln -s ~/mca_example/src/apache-ant-1.10.3/bin/ant ~/mca_example/bin/.
+	cd ..
 
 **4\.b** Install the **Ribsomal Database Project** (RDP) into src
 
+	cd ~/mca_example/src
+	module load java/jdk1.8
 	git clone https://github.com/rdpstaff/RDPTools.git
 	cd RDPTools/
 	git submodule init
 	git submodule update
 	make
+	# might have problems retreiving data.tgz file ... if so, try again ...
+	# during 9-5 EST(!) ... 
 	# test installation, should see help documentation for classify
 	java -jar classifier.jar classify
+	# this should give you a "Command Error" because you didn\'t specify output
+	# ... but it should give you a list of options
+	# feel free to move on if the 'make' fails due to data.tgz file
 	cd ..
 
-**4\.b** RDP may not install correctly, if so copy over my version 
-	
-	module load java/1.8
-	cp /home/msettles/RDPTools.tar.gz .
-	tar zxvf RDPTools.tar.gz
+**4\.c** Add the location of classifier.jar as a variable in our \.bash_profile
 
-**4\.c** Add the location of classifier.jar as a variable in our mca_profile
+using your favorite text editor, (nano?), add the line
 
-using your favorite text editor, _nano_ is simple, add the line
-
-	module load java/1.8
+	module load java/jdk1.8
 	export RDP_PATH=~/mca_example/src/RDPTools
 
-to a file named ~/mca_profile, then source it	
+to ~/\.bash_profile, then source it
 
-	source ~/mca_profile
+	source ~/.bash_profile  # runs the commands right away, instead of at next login
 
 ---
 
-**5\.a** Setup a python virtual environment for dbcAmplicons
+**5\.a** Setup a python virtual environment for dbcAmplicons, in the src directory
 
-	module load python/2.7.13
+	cd ~/mca_example/src
+	module load python-libs/2.7.6-ubuntu
 	virtualenv dbcA_virtualenv
 
-**5\.b** now lets set the virtual environment to activate on login by adding it to our mca_profile
+**5\.b** This lets you set the virtual environment to activate on login by adding it to our \.bash_profile
 
 using your favorite text editor, _nano_ is simple, add the lines
 
-	module load python/2.7.13
+	module load python-libs/2.7.6-ubuntu
 	source ~/mca_example/src/dbcA_virtualenv/bin/activate
-	ulimit -S -v 4194304
 
-to a file named ~/mca_profile, then source it	
+to a file named ~/\.bash_profile, then source it
 
-	source ~/mca_profile
+	source ~/.bash_profile
+
+You should now see the text "(dbcA_virtualenv)" at the beginning of your prompt.
 
 ---
 
-**6\.** install **dbcAmplicons**
+**6\.** Install **dbcAmplicons**
 
-	pip install numpy scipy pandas
+	cd ~/mca_example/src
+	pip install biom-format
 	git clone https://github.com/msettles/dbcAmplicons.git
 	cd dbcAmplicons/
 	python setup.py install
 	# test installation, should see help documentation
-	dbcAmplicons -h
+	dbcAmplicons -h  # should show options / usage message
 	cd ..
 
-(Optional) You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folds (in dbcAmplicions).
+**Optional\.** Test **dbcAmplicons**
+
+You could also test the dbcAmplicons installation by running the script, test_dbAmplicons.sh, under the tests folder (in dbcAmplicions).
+
+  cd ~/mca_example/src/dbcAmplicons/tests/
+  ./test_dbAmplicons.sh  # could show some ERRORs / WARNINGs, but otherwise give stats after a few minutes
+
 ---
 
 **Lets Review**
@@ -129,32 +144,43 @@ We created a directory for the workshop, in that directory we created two folder
 1. You should have verified all the software works by viewing their help docs
 2. Verify that the flash executable is indeed in the bin folder
 3. We've modified your PATH and added 1 new environment variable, RDP_PATH, verify the PATH and the new env variable.
-4. We added a multiple lines to your mca_profile. How many lines?
+4. We added a multiple lines to your \.bash_profile. How many lines?
 
 Now log out, log back in and verify that each application still works. Ex.
 
-	source ~/mca_profile
 	flash2 -h
 
-To verify RDP use 
+To verify RDP and dbcAmplicons use
 
 	java -jar $RDP_PATH/classifier.jar classify
 	dbcAmplicons -h
 
-You can check the current version of everything with, we usually save the output of this in the project file to remind ourselves which versions were run.
+You can check the current version of everything with
 
 	dbcVersionReport.sh
 
-You can test the dbcAmplicons installation buy running the script test_dbAmplicons.sh, in the tests folder.
+We usually save the output of this in the project file to remind ourselves which versions of software were run for that project.
+
+If for some reason installation failed you can extract a copy from the workshop share
+
+	cd
+	cd mca_example
+	tar xzvf /share/biocore/workshops/2018_May_MCA/software.tar.gz
+
+You still need to set up the same environment variable in your \.bash_profile. These lines should be in your .bash_profile
+
+  export PATH=~/mca_example/bin:$PATH  
+  module load java/jdk1.8  
+  export RDP_PATH=~/mca_example/src/RDPTools  
+  module load python-libs/2.7.6-ubuntu  
+  source ~/mca_example/src/dbcA_virtualenv/bin/activate  
 
 ---
 
 **7\.** Last lets copy the workshop data into our home directory.
 
-	cd 
-	cd mca_example
-	cp /home/msettles/Illumina_Reads.tar.gz .
-	tar zxvf Illumina_Reads.tar.gz
+  cd  
+  cd mca_example  
+  cp -r /share/biocore/workshops/2018_May_MCA/Illumina_Reads .  
 
 Take a look at the files ... what is inside the Illumina_Reads folder?
-

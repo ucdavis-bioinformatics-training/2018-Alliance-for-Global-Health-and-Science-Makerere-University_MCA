@@ -7,7 +7,7 @@ output:
 
 # Using the Phyloseq package
 
-The phyloseq package is fast becoming a good way a managing micobial community data, filtering and visualizing that data and performing analysis such as ordination. Along with the standard R environment and packages vegan and vegetarian you can perform virually any analysis. We will
+The phyloseq package is fast becoming a good way a managing micobial community data, filtering and visualizing that data and performing analysis such as ordination. Along with the standard R environment and packages vegan and vegetarian you can perform virually any analysis. Today we will
 
 1. Install R packages
 2  Load data straight from dbcAmplicons (biom file)
