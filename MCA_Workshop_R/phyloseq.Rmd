@@ -1,8 +1,9 @@
 ---
 title: "Microbial Community Analysis workshop"
 output:
-  pdf_document: default
-  html_notebook: default
+    html_document:
+      keep_md: TRUE
+    pdf_document: default
 ---
 
 # Using the Phyloseq package
@@ -29,7 +30,9 @@ We first need to make sure we have the necessary packages: phyloseq, ggplot2, gr
 #biocLite("gridExtra")
 #biocLite("edgeR")
 #biocLite("vegan")
+
 library(phyloseq)
+library(biomformat)
 library(ggplot2)
 library(gridExtra)
 library(vegan)
@@ -41,8 +44,9 @@ First read in the dataset, see what the objects look like. Our Biom file, produc
 
 
 ```{r}
-slashpile_16sV1V3 <- "16sV1V3.biom"
-s16sV1V3 = import_biom(BIOMfilename = slashpile_16sV1V3, parseFunction = parse_taxonomy_default)
+slashpile_16sV1V3 <- "../16sV1V3.biom"
+s16sV1V3 = import_biom(BIOMfilename = "../16sV1V3.biom", parseFunction = parse_taxonomy_default)
+
 # this changes the columns names to kingdon through genus
 colnames(tax_table(s16sV1V3)) <- c("Kingdom", "Phylum", "Class", "Order", "Family", "Genus")
 

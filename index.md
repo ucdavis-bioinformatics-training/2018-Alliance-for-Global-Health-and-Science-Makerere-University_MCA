@@ -36,7 +36,8 @@
 
 
 ### Microbial Community Analysis in R
-* [MCA Analysis in phyloseq]()
-
+* [MCA Analysis in phyloseq](MCA_Workshop_R/phyloseq.md)
+  * [phyloseq.Rmd](MCA_Workshop_R/phyloseq.Rmd)
+)
 ### Resources
 * [Primer Design](metadata/Illumina-workshop-Primers-worksheet.xls)
