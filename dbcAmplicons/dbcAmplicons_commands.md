@@ -155,11 +155,7 @@ View the output folder, what do you see?
 
 	dbcVersionReport.sh &> VersionInfo.txt
 
-**8\.** Transfer the four output files from dbcAmplicons abundances to your computer. Can use scp or sftp
-
-Transfer the abundances, proportions, tax_info, and biom file to your computer for processing in R. You can view the proportions, abundances, and tax_info files in excel. Take a look at the biom file format, is it readable?
-
-**9\.** Process the remainder of the amplicons. First perform 'join', check the output and then the remainder of the pipeline on the other amplicons: 16sV3V4, ITS1, ITS2, LSU
+**8\.** Process the remainder of the amplicons. First perform 'join', check the output and then the remainder of the pipeline on the other amplicons: 16sV3V4, ITS1, ITS2, LSU
 
 Post joining evaluate the results. --Hint: one of these should be processed differently than the others--
 
@@ -170,7 +166,3 @@ Once join is complete for all amplicons, setup and run the remainder of the pipe
 **FYI** dbcAmplicons screen can be used when you want to remove read contaminants. Can be ran either before or after dbcAmplicons join. You provide a reference fasta file to screen and it will remove any reads that map to any sequence in that file.
 
 	dbcAmplicons screen -h
-
-**FYI** Preprocessing Pairs with inline BC, Mills lab protocol
-
-	preprocPair_with_inlineBC.py -h
