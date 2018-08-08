@@ -1,7 +1,6 @@
 ---
 title: "Prepare Data_in_R"
 author: "Bioinformatics Core"
-date: "2018-03-28"
 output:
     html_document:
       keep_md: TRUE
@@ -56,13 +55,13 @@ library(reshape2)
 ```
 
 ```
-## 
+##
 ## Attaching package: 'reshape2'
 ```
 
 ```
 ## The following object is masked from 'package:tidyr':
-## 
+##
 ##     smiths
 ```
 
@@ -74,13 +73,13 @@ library(gridExtra)
 ```
 
 ```
-## 
+##
 ## Attaching package: 'gridExtra'
 ```
 
 ```
 ## The following object is masked from 'package:dplyr':
-## 
+##
 ##     combine
 ```
 
@@ -147,5 +146,3 @@ output:
 We will recreate some of the plots generated with plot-bamstats on the same file
 
 You can view the output of plot-bamstats -> <https://rawgit.com/ucdavis-bioinformatics-training/2018-March-Bioinformatics-Prerequisites/master/Data_in_R/bwa_mem_Stats/bwa_mem_Stats.html>
-
-
