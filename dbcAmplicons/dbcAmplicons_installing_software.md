@@ -92,14 +92,11 @@ to ~/\.bash_profile, then source it
 
 ---
 
-**5\.a** Setup a python virtual environment for dbcAmplicons, in the src directory
+**5\.a** Setup a python virtual environment for dbcAmplicons, in the src directory. You may need to first install virtualenv and pip, pip can be installed following instructions from here [pip](https://pip.pypa.io/en/stable/installing/) and then:
 
-If virtualenv is not available, First
-
-	easy_install pip
 	pip install virtualenv
 
-then,
+If you already have pip, or having installed it using above, then
 
 	cd ~/mca_example/src
 	virtualenv dbcA_virtualenv
