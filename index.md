@@ -25,9 +25,9 @@
 * [dbcAmplicons: Data processing, other amplicons](dbcAmplicons/dbcAmplicons_commands_all_amplicons.md) (materials)
 
 ### Intro R Material
-* [Intro to R](intro2R/intro2R.md)
-  * [raw_counts.csv](intro2R/raw_counts.csv)
-  * [raw_counts.txt](intro2R/raw_counts.txt)
+* [Intro to R](Intro2R/Intro2R.md)
+  * [raw_counts.csv](Intro2R/raw_counts.csv)
+  * [raw_counts.txt](Intro2R/raw_counts.txt)
 * Data in R
   * [prepare](Data_in_R/data_in_R_prepare.md)
   * [Data in R](Data_in_R/data_in_R.md)
@@ -38,6 +38,6 @@
 ### Microbial Community Analysis in R
 * [MCA Analysis in phyloseq](MCA_Workshop_R/phyloseq.md)
   * [phyloseq.Rmd](MCA_Workshop_R/phyloseq.Rmd)
-)
+
 ### Resources
 * [Primer Design](metadata/Illumina-workshop-Primers-worksheet.xls)
