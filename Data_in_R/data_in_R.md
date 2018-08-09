@@ -1,7 +1,6 @@
 ---
 title: "Data_in_R"
 author: Matt Settles
-date: "2018-03-28"
 output:
     html_document:
         keep_md: TRUE
@@ -40,13 +39,13 @@ library(reshape2)
 ```
 
 ```
-## 
+##
 ## Attaching package: 'reshape2'
 ```
 
 ```
 ## The following object is masked from 'package:tidyr':
-## 
+##
 ##     smiths
 ```
 
@@ -55,13 +54,13 @@ library(gridExtra)
 ```
 
 ```
-## 
+##
 ## Attaching package: 'gridExtra'
 ```
 
 ```
 ## The following object is masked from 'package:dplyr':
-## 
+##
 ##     combine
 ```
 
@@ -169,7 +168,7 @@ bases mapped (cigar):             568895918
 bases trimmed:                    0            
 bases duplicated:                 0            
 mismatches:                       2455843      
-error rate:                       4.316858e-03 
+error rate:                       4.316858e-03
 average length:                   100          
 maximum length:                   100          
 average quality:                  38.8         
@@ -386,7 +385,7 @@ Ok, what about plotting multiple data objects on the same plot (multiple lines),
 ```r
 g <- ggplot(data = is, aes(as.numeric(get("insert size"))))
 g + geom_line(aes(y=as.numeric(get("inward"))),color="blue") +  
-    geom_line(aes(y=as.numeric(get("outward"))),color="orange") + 
+    geom_line(aes(y=as.numeric(get("outward"))),color="orange") +
     labs( x = "insert size", y = "all pairs", title ="Mapped insert sizes", subtitle = "All Pairs", caption = "all pairs insert size")
 ```
 
@@ -413,8 +412,8 @@ g <- ggplot(data = is, aes(as.numeric(get("insert size"))))
 g <- g + geom_line(aes(y=as.numeric(get("all pairs"))), color="black") +  
     geom_line(aes(y=as.numeric(get("inward"))), color="green") +
     geom_line(aes(y=as.numeric(get("outward"))), color="blue") +
-    geom_line(aes(y=as.numeric(get("other"))), color="orange") 
-g <- g + 
+    geom_line(aes(y=as.numeric(get("other"))), color="orange")
+g <- g +
     labs( x = "insert size", y = "all pairs", title ="Mapped insert sizes", subtitle = "All Pairs", caption = "all pairs insert size")
 g <- g + coord_cartesian(xlim=c(0,600), ylim=c(0,20000))
 ```
@@ -497,7 +496,7 @@ Take a look at the new object
 
 
 ```r
-j <- ggplot(fqm, aes(Cycle, variable)) 
+j <- ggplot(fqm, aes(Cycle, variable))
 j + geom_tile(aes(fill = as.numeric(value)))
 ```
 
@@ -554,7 +553,7 @@ k
 Tweek the grid elments using theme
 
 ```r
-k <- k + theme(panel.grid.minor = element_blank(), 
+k <- k + theme(panel.grid.minor = element_blank(),
   panel.grid.major = element_line(color = "gray50", size = 0.5),
   panel.grid.major.x = element_blank())
 k
@@ -593,7 +592,7 @@ l
 Tweek the grid
 
 ```r
-l <- l + theme(panel.grid.minor = element_blank(), 
+l <- l + theme(panel.grid.minor = element_blank(),
   panel.grid.major = element_line(color = "gray50", size = 0.5),
   panel.grid.major.x = element_blank())
 l
@@ -634,7 +633,7 @@ include_graphics("https://raw.githubusercontent.com/ucdavis-bioinformatics-train
 
 ```r
 grid.arrange(
-  g, h, i, i2, 
+  g, h, i, i2,
   widths = c(2, 1, 1),
   layout_matrix = rbind(c(1, 2, NA),
                         c(3, 3, 4))
@@ -682,22 +681,22 @@ sessionInfo()
 ## R version 3.4.4 (2018-03-15)
 ## Platform: x86_64-apple-darwin15.6.0 (64-bit)
 ## Running under: macOS High Sierra 10.13.3
-## 
+##
 ## Matrix products: default
 ## BLAS: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRblas.0.dylib
 ## LAPACK: /Library/Frameworks/R.framework/Versions/3.4/Resources/lib/libRlapack.dylib
-## 
+##
 ## locale:
 ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
-## 
+##
 ## attached base packages:
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
-## 
+##
 ## other attached packages:
 ##  [1] gridExtra_2.3   reshape2_1.4.3  forcats_0.3.0   stringr_1.3.0  
 ##  [5] dplyr_0.7.4     purrr_0.2.4     readr_1.1.1     tidyr_0.8.0    
 ##  [9] tibble_1.4.2    ggplot2_2.2.1   tidyverse_1.2.1 knitr_1.20     
-## 
+##
 ## loaded via a namespace (and not attached):
 ##  [1] tidyselect_0.2.4 haven_1.1.1      lattice_0.20-35  colorspace_1.3-2
 ##  [5] htmltools_0.3.6  yaml_2.1.18      rlang_0.2.0      pillar_1.2.1    
@@ -705,11 +704,11 @@ sessionInfo()
 ## [13] bindrcpp_0.2     bindr_0.1.1      plyr_1.8.4       munsell_0.4.3   
 ## [17] gtable_0.2.0     cellranger_1.1.0 rvest_0.3.2      psych_1.7.8     
 ## [21] evaluate_0.10.1  labeling_0.3     parallel_3.4.4   highr_0.6       
-## [25] broom_0.4.3      Rcpp_0.12.16     scales_0.5.0     backports_1.1.2 
-## [29] jsonlite_1.5     mnormt_1.5-5     hms_0.4.2        packrat_0.4.9-1 
-## [33] digest_0.6.15    stringi_1.1.7    grid_3.4.4       rprojroot_1.3-2 
+## [25] broom_0.4.3      Rcpp_0.12.16     scales_0.5.0     backports_1.1.2
+## [29] jsonlite_1.5     mnormt_1.5-5     hms_0.4.2        packrat_0.4.9-1
+## [33] digest_0.6.15    stringi_1.1.7    grid_3.4.4       rprojroot_1.3-2
 ## [37] cli_1.0.0        tools_3.4.4      magrittr_1.5     lazyeval_0.2.1  
-## [41] crayon_1.3.4     pkgconfig_2.0.1  xml2_1.2.0       lubridate_1.7.3 
+## [41] crayon_1.3.4     pkgconfig_2.0.1  xml2_1.2.0       lubridate_1.7.3
 ## [45] assertthat_0.2.0 rmarkdown_1.9    httr_1.3.1       rstudioapi_0.7  
 ## [49] R6_2.2.2         nlme_3.1-131.1   compiler_3.4.4
 ```

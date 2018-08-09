@@ -25,7 +25,7 @@
 * [dbcAmplicons: Data processing, other amplicons](dbcAmplicons/dbcAmplicons_commands_all_amplicons.md) (materials)
 
 ### Intro R Material
-* [Intro to R](Intro2R/Intro2R.md) 
+* [Intro to R](Intro2R/Intro2R.md)
   * [raw_counts.csv](Intro2R/raw_counts.csv)
   * [raw_counts.txt](Intro2R/raw_counts.txt)
 * Data in R

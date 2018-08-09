@@ -15,7 +15,7 @@ The phyloseq package is fast becoming a good way a managing micobial community d
 4. Filter out additional Taxa
 5. Filter out samples
 6. Graphical Summaries
-7. Ordination 
+7. Ordination
 8. Differential Abundances
 
 ## installation from bioconductor
@@ -138,7 +138,7 @@ head(tax_table(s16sV1V3))
 ## Taxa_00001 "d__Archaea"  "p__Crenarchaeota" "c__Thermoprotei"      
 ## Taxa_00002 "d__Bacteria" NA                 NA                     
 ## Taxa_00003 "d__Bacteria" "p__Acidobacteria" NA                     
-## Taxa_00004 "d__Bacteria" "p__Acidobacteria" "c__Acidobacteria_Gp1" 
+## Taxa_00004 "d__Bacteria" "p__Acidobacteria" "c__Acidobacteria_Gp1"
 ## Taxa_00005 "d__Bacteria" "p__Acidobacteria" "c__Acidobacteria_Gp10"
 ##            Order                  Family              Genus         
 ## Taxa_00000 NA                     NA                  NA            
@@ -317,7 +317,7 @@ s16sV1V3.1
 
 ### Individual Taxa Filtering
 
-Subset to the remaining phyla by prevelance. 
+Subset to the remaining phyla by prevelance.
 
 ```r
 prevelancedf1 = subset(prevelancedf, Phylum %in% get_taxa_unique(s16sV1V3.1, taxonomic.rank = "Phylum"))
@@ -403,7 +403,7 @@ Do some simple ordination looking for outlier samples, first we variance stabili
 logt  = transform_sample_counts(s16sV1V3.3, function(x) log(1 + x) )
 out.pcoa.logt <- ordinate(logt, method = "PCoA", distance = "bray")
 evals <- out.pcoa.logt$values$Eigenvalues
-plot_ordination(logt, out.pcoa.logt, type = "samples", 
+plot_ordination(logt, out.pcoa.logt, type = "samples",
                 color = "Slash_pile_number", shape = "Depth_cm") + labs(col = "Slash pile number") +
   coord_fixed(sqrt(evals[2] / evals[1]))
 ```
@@ -411,7 +411,7 @@ plot_ordination(logt, out.pcoa.logt, type = "samples",
 ![](phyloseq_files/figure-html/unnamed-chunk-10-1.png)<!-- -->
 
 ```r
-plot_ordination(logt, out.pcoa.logt, type = "species", color = "Phylum") 
+plot_ordination(logt, out.pcoa.logt, type = "species", color = "Phylum")
 ```
 
 ![](phyloseq_files/figure-html/unnamed-chunk-10-2.png)<!-- -->
@@ -486,7 +486,7 @@ You could also use the MDS method of ordination here, edit the code to do so. Ca
 
 
 ```r
-#Can view the distance method options with 
+#Can view the distance method options with
 ?distanceMethodList
 
 # can veiw the oridinate methods with
@@ -619,7 +619,7 @@ table(keepTaxa)
 
 ```
 ## keepTaxa
-## FALSE  TRUE 
+## FALSE  TRUE
 ##   188    80
 ```
 
@@ -658,7 +658,7 @@ dev.off()
 ```
 
 ```
-## quartz_off_screen 
+## quartz_off_screen
 ##                 2
 ```
 
@@ -669,7 +669,7 @@ dev.off()
 ```
 
 ```
-## quartz_off_screen 
+## quartz_off_screen
 ##                 2
 ```
 
@@ -681,47 +681,47 @@ v4.hell.ord <- ordinate(s16sV1V3.4hell, "NMDS", "bray")
 ```
 
 ```
-## Run 0 stress 0.09454798 
-## Run 1 stress 0.1497136 
-## Run 2 stress 0.1041538 
-## Run 3 stress 0.1041543 
-## Run 4 stress 0.1470895 
-## Run 5 stress 0.09454798 
+## Run 0 stress 0.09454798
+## Run 1 stress 0.1497136
+## Run 2 stress 0.1041538
+## Run 3 stress 0.1041543
+## Run 4 stress 0.1470895
+## Run 5 stress 0.09454798
 ## ... New best solution
-## ... Procrustes: rmse 3.175834e-05  max resid 8.026623e-05 
+## ... Procrustes: rmse 3.175834e-05  max resid 8.026623e-05
 ## ... Similar to previous best
-## Run 6 stress 0.104154 
-## Run 7 stress 0.1149423 
-## Run 8 stress 0.1149425 
-## Run 9 stress 0.09454797 
+## Run 6 stress 0.104154
+## Run 7 stress 0.1149423
+## Run 8 stress 0.1149425
+## Run 9 stress 0.09454797
 ## ... New best solution
-## ... Procrustes: rmse 1.261506e-05  max resid 2.97271e-05 
+## ... Procrustes: rmse 1.261506e-05  max resid 2.97271e-05
 ## ... Similar to previous best
-## Run 10 stress 0.1041538 
-## Run 11 stress 0.1041537 
-## Run 12 stress 0.09454797 
+## Run 10 stress 0.1041538
+## Run 11 stress 0.1041537
+## Run 12 stress 0.09454797
 ## ... New best solution
-## ... Procrustes: rmse 5.260917e-06  max resid 1.425069e-05 
+## ... Procrustes: rmse 5.260917e-06  max resid 1.425069e-05
 ## ... Similar to previous best
-## Run 13 stress 0.09454799 
-## ... Procrustes: rmse 4.260504e-05  max resid 0.0001034832 
+## Run 13 stress 0.09454799
+## ... Procrustes: rmse 4.260504e-05  max resid 0.0001034832
 ## ... Similar to previous best
-## Run 14 stress 0.09454798 
-## ... Procrustes: rmse 7.322891e-06  max resid 1.661052e-05 
+## Run 14 stress 0.09454798
+## ... Procrustes: rmse 7.322891e-06  max resid 1.661052e-05
 ## ... Similar to previous best
-## Run 15 stress 0.1041537 
-## Run 16 stress 0.09454797 
+## Run 15 stress 0.1041537
+## Run 16 stress 0.09454797
 ## ... New best solution
-## ... Procrustes: rmse 2.952868e-06  max resid 7.916571e-06 
+## ... Procrustes: rmse 2.952868e-06  max resid 7.916571e-06
 ## ... Similar to previous best
-## Run 17 stress 0.09454797 
-## ... Procrustes: rmse 5.605055e-06  max resid 1.589235e-05 
+## Run 17 stress 0.09454797
+## ... Procrustes: rmse 5.605055e-06  max resid 1.589235e-05
 ## ... Similar to previous best
-## Run 18 stress 0.1453109 
-## Run 19 stress 0.09454797 
-## ... Procrustes: rmse 4.965676e-06  max resid 1.503381e-05 
+## Run 18 stress 0.1453109
+## Run 19 stress 0.09454797
+## ... Procrustes: rmse 4.965676e-06  max resid 1.503381e-05
 ## ... Similar to previous best
-## Run 20 stress 0.1497855 
+## Run 20 stress 0.1497855
 ## *** Solution reached
 ```
 
@@ -739,7 +739,7 @@ p1 + facet_wrap(~Phylum, 5)
 ![](phyloseq_files/figure-html/unnamed-chunk-16-2.png)<!-- -->
 
 ```r
-p2 = plot_ordination(s16sV1V3.4hell, v4.hell.ord, type="samples", color="Depth_cm", shape="Slash_pile_number") 
+p2 = plot_ordination(s16sV1V3.4hell, v4.hell.ord, type="samples", color="Depth_cm", shape="Slash_pile_number")
 #p2 + geom_polygon(aes(fill=Slash_pile_number)) + geom_point(size=5) + ggtitle("samples")
 p2
 ```
@@ -773,7 +773,7 @@ m = m + 1
 taxonomy = tax_table(s16sV1V3.4, errorIfNULL=FALSE)
 if( !is.null(taxonomy) ){
   taxonomy = data.frame(as(taxonomy, "matrix"))
-} 
+}
 # Now turn into a DGEList
 d = DGEList(counts=m, genes=taxonomy, remove.zeros = TRUE)
 
@@ -829,7 +829,7 @@ mm
 ## attr(,"contrasts")
 ## attr(,"contrasts")$Slash_pile_number
 ## [1] "contr.treatment"
-## 
+##
 ## attr(,"contrasts")$Depth_cm
 ## [1] "contr.treatment"
 ```
@@ -891,7 +891,7 @@ length(which(tmp2$adj.P.Val < 0.05)) # number of Differentially abundant taxa
 # 0
 sigtab = cbind(as(tmp2, "data.frame"), as(tax_table(s16sV1V3.4)[rownames(tmp2), ], "matrix"))
 
-## One last plot 
+## One last plot
 theme_set(theme_bw())
 scale_fill_discrete <- function(palname = "Set1", ...) {
     scale_fill_brewer(palette = palname, ...)
@@ -905,7 +905,7 @@ sigtabgen$Phylum = factor(as.character(sigtabgen$Phylum), levels = names(x))
 x = tapply(sigtabgen$logFC, sigtabgen$Genus, function(x) max(x))
 x = sort(x, TRUE)
 sigtabgen$Genus = factor(as.character(sigtabgen$Genus), levels = names(x))
-ggplot(sigtabgen, aes(x = Genus, y = logFC, color = Phylum)) + geom_point(size=6) + 
+ggplot(sigtabgen, aes(x = Genus, y = logFC, color = Phylum)) + geom_point(size=6) +
   theme(axis.text.x = element_text(angle = -90, hjust = 0, vjust = 0.5))
 ```
 
